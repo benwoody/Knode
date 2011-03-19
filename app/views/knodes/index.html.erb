@@ -1,0 +1,29 @@
+<h1>Listing knodes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Info</th>
+    <th>Media</th>
+    <th>Links</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @knodes.each do |knode| %>
+  <tr>
+    <td><%= knode.title %></td>
+    <td><%= knode.info %></td>
+    <td><%= knode.media %></td>
+    <td><%= knode.links %></td>
+    <td><%= link_to 'Show', knode %></td>
+    <td><%= link_to 'Edit', edit_knode_path(knode) %></td>
+    <td><%= link_to "Delete", knode, :method => :delete, :confirm => 'Are you sure?', :title => "Delete #{knode.title}" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Knode', new_knode_path %>

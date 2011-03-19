@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table class="profile">
+  <tr>
+    <td class="main">
+      
+      <% @user.knodes.each do |knode| %>
+      <li><%= link_to knode.title, knode %>
+      <% end %>
+
+    </td>
+    <td>
+      <strong>Name:</strong> <%= @user.uname %><br />
+      <strong>Email:</strong> <%= @user.email %><br />
+      <strong>Knodes:</strong> <%= @user.knodes.count %>
+    </td>
+  </tr>
+</table>
+<%= link_to 'Back', users_path %> |
+<%= link_to 'New Knode', new_knode_path %>
+

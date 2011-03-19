@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <h1> <%= @knode.title %></h1>
+</p>
+<p>
+  <b>Category:</b>
+  <%= @knode.category %>
+</p>
+<p>
+  <b>Info:</b>
+  <%= @knode.info.html_safe %>
+</p>
+
+<p>
+  <b>Media:</b>
+  <%= @knode.media.html_safe %>
+</p>
+
+<p>
+  <b>Links:</b>
+  <%= @knode.links.html_safe %>
+</p>
+
+
+<%= link_to 'Edit', edit_knode_path(@knode) %> |
+<%= link_to 'Back', knodes_path %>

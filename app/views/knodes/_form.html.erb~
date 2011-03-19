@@ -1,0 +1,33 @@
+<%= form_for(@knode) do |f| %>
+  <% if @knode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@knode.errors.count, "error") %> prohibited this knode from being saved:</h2>
+
+      <ul>
+      <% @knode.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= h f.text_area :info, :class => "mceEditor" %>
+  </div>
+  <div class="field">
+    <%= f.label :media %><br />
+    <%= f.text_area :media, :class => "mceEditor"  %>
+  </div>
+  <div class="field">
+    <%= f.label :links %><br />
+    <%= f.text_area :links, :class => "mceEditor"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
